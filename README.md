@@ -1,7 +1,7 @@
 # ChatGPT Web Midjourney Proxy
 💡**声明**
 - 此项目只发布于 GitHub，基于 MIT 协议，免费且作为开源学习使用。并且不会有任何形式的卖号、付费服务、讨论群、讨论组等行为。谨防受骗。
-- 本开源是在 [ChenZhaoYu](https://github.com/Chanzhaoyu/chatgpt-web) 基础上做二次开发 ；使用 [midjourney-proxy](https://github.com/novicezk/midjourney-proxy) 提供的midjourney api 作为后端而形成的。
+- 本开源是在 [ChenZhaoYu](https://github.com/cmcc456/A.git) 基础上做二次开发 ；使用 [midjourney-proxy](https://github.com/cmcc456/A.git) 提供的midjourney api 作为后端而形成的。
 
 
 ![cover](./docs/mj2a1.jpg)
@@ -15,7 +15,7 @@
 - ✅ midjourney 支持1.5倍变焦 2倍变焦
 - ✅ midjourney 支持2倍高清 4倍高清
 - ✅ midjourney 支持左、右、上、下延伸变化
-- ✅ midjourney 同时支持[midjourney-proxy](https://github.com/novicezk/midjourney-proxy) 接口 和 [midjourney-proxy-plus](https://github.com/litter-coder/midjourney-proxy-plus) 接口
+- ✅ midjourney 同时支持[midjourney-proxy](https://github.com/cmcc456/A.git) 接口 和 [midjourney-proxy-plus](https://github.com/litter-coder/midjourney-proxy-plus) 接口
 - ✅ midjourney 图生文
 - ✅ 图片使用localforage实现本地存储
 - ✅ 支持midjourney、niji 不同机器人
@@ -41,7 +41,7 @@
 
 ## Vercel 一键部署
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Dooy/chatgpt-web-midjourney-proxy&env=OPENAI_API_BASE_URL&env=OPENAI_API_KEY&env=MJ_SERVER&env=MJ_API_SECRET&project-name=chatgpt-web-midjourney-proxy&repository-name=chatgpt-web-midjourney-proxy)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Dooy/A&env=OPENAI_API_BASE_URL&env=OPENAI_API_KEY&env=MJ_SERVER&env=MJ_API_SECRET&project-name=A&repository-name=A)
 
 ## env 环境变量
 
@@ -73,25 +73,25 @@
 
 ## docker 部署
 **假设**:
-- 你已经搭建好 [midjourney-proxy](https://github.com/novicezk/midjourney-proxy) 服务，开发端口服务器地址为 https://172.17.0.1:6013
-- [midjourney-proxy](https://github.com/novicezk/midjourney-proxy) 服务 的 API_SECRET  为 abc123456
+- 你已经搭建好 [midjourney-proxy](https://github.com/cmcc456/A.git) 服务，开发端口服务器地址为 https://172.17.0.1:6013
+- [midjourney-proxy](https://github.com/cmcc456/A.git) 服务 的 API_SECRET  为 abc123456
 ```bash
-docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
+docker run --name A  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
 -e OPENAI_API_BASE_URL=https://api.openai.com  \
 -e MJ_SERVER=https://172.17.0.1:6013  \
--e MJ_API_SECRET=abc123456  ydlhero/chatgpt-web-midjourney-proxy
+-e MJ_API_SECRET=abc123456  ydlhero/A
 ```
 访问 http://ip:6015 
 
 **文件上传**: 
 ```bash
-docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
+docker run --name A  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
 -e OPENAI_API_BASE_URL=https://api.openai.com  \
 -e MJ_SERVER=https://172.17.0.1:6013  \
 -e API_UPLOADER=1  -v /data/uploads:/app/uploads \
--e MJ_API_SECRET=abc123456  ydlhero/chatgpt-web-midjourney-proxy
+-e MJ_API_SECRET=abc123456  ydlhero/A
 ```
 如果是前端ui设置 OPENAI_API_KEY OPENAI_API_BASE_URL ; 图片上传也会随着走 OPENAI_API_BASE_URL走
 ```shell
@@ -105,7 +105,7 @@ curl -X POST -H "Content-Type: multipart/form-data" -F "file=@/path/to/file" htt
 ```
 
 ### midjourney-proxy API docker部署
-更多参考到 [midjourney-proxy](https://github.com/novicezk/midjourney-proxy) 开源光光
+更多参考到 [midjourney-proxy](https://github.com/cmcc456/A.git) 开源辉
 ```bash
 docker run -d --name mj6013  -p 6013:8080  \
 -e mj.discord.guild-id=discord服务ID  \
@@ -178,14 +178,14 @@ AUTH_SECRET_ERROR_TIME=10
 ```
 - [x] 脚本如下
 ```shell
-docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
+docker run --name A  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
 -e OPENAI_API_BASE_URL=https://api.openai.com  \
 -e MJ_SERVER=https://172.17.0.1:6013  \
 -e MJ_API_SECRET=abc123456 \
 -e API_UPLOADER=1  -v /data/uploads:/app/uploads \
 -e AUTH_SECRET_KEY=你的英文密码 -e AUTH_SECRET_ERROR_COUNT=3 \
--e AUTH_SECRET_ERROR_TIME=10 ydlhero/chatgpt-web-midjourney-proxy
+-e AUTH_SECRET_ERROR_TIME=10 ydlhero/A
 ```
 - 
 ## License
@@ -194,7 +194,7 @@ MIT © [Dooy](./license)
 ## 其他
 如果觉得这个项目对您有所帮助，请帮忙点个star 或者捐助我们
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Dooy/chatgpt-web-midjourney-proxy&type=Date)](https://star-history.com/#Dooy/chatgpt-web-midjourney-proxy&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Dooy/A&type=Date)](https://star-history.com/#Dooy/A&Date)
 
 ## 捐助
 如果我的开源项目对你有帮助，请考虑通过以下任意一种方式赞助: 

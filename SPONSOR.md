@@ -3,6 +3,6 @@
 如果我的开源项目对你有帮助，请考虑通过以下任意一种方式赞助:
 
 ## 微信赞助
-![微信](A/docs/AV.jpg)
+![微信](A/docs/wxpay.jpg)
 ## 支付宝赞助
-![支付宝](A/docs/AZFB.jpg)
+![支付宝](A/docs/alipay.jpg)

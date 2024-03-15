@@ -1,5 +1,11 @@
-{
-  "root": true,
-  "ignorePatterns": ["build"],
-  "extends": ["@antfu"]
+{  
+  "root": true,  
+  "ignorePatterns": ["build/"], // 确保路径以斜杠结尾，以匹配目录而不是文件  
+  "extends": ["@antfu"], // 确保 '@antfu' 是一个有效的 ESLint 配置，并且适用于你的项目  
+  // 如果需要，可以添加注释来解释每个字段的用途  
+  // "comments": {  
+  //   "root": "设置为 true 表示这是一个根配置文件，不会查找父级目录中的 ESLint 配置文件。",  
+  //   "ignorePatterns": "要忽略的文件或目录模式列表。",  
+  //   "extends": "扩展一个或多个已存在的 ESLint 配置。"  
+  // }  
 }

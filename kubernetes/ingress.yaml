@@ -1,21 +1,29 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/proxy-connect-timeout: '5'
-  name: chatgpt-web
-spec:
-  rules:
-    - host: chatgpt.example.com
-      http:
-        paths:
-          - backend:
-              service:
-                name: chatgpt-web
-                port:
-                  number: 3002
-            path: /
-            pathType: ImplementationSpecific
-  tls:
-    - secretName: chatgpt-web-tls
+apiVersion: networking.k8s.io/v1  
+kind: Ingress  
+metadata:  
+  annotations:  
+    # 假设Nginx Ingress控制器是集群中使用的Ingress实现  
+    kubernetes.io/ingress.class: nginx  
+    # 设置代理连接超时时间  
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: '5'  
+    # 可以添加其他Nginx特定的注解，如重定向规则、重写规则等  
+  name: chatgpt-web  
+  # 添加注释以解释Ingress的用途  
+  # comments: Ingress for the chatgpt-web service  
+spec:  
+  rules:  
+    - host: chatgpt.example.com # 替换为实际主机名或使用变量  
+      http:  
+        paths:  
+          - backend:  
+              service:  
+                name: chatgpt-web  
+                port:  
+                  number: 3002  
+            path: / # 如果路径类型设置为Prefix，可以考虑添加具体的路径前缀  
+            pathType: Prefix # 根据需要设置为Prefix或Exact  
+  tls:  
+    - secretName: chatgpt-web-tls # 确保Secret存在且包含有效的TLS证书和私钥  
+      # 可以添加hosts字段以指定哪些主机名这个TLS配置应该被应用  
+      # hosts:  
+      #   - chatgpt.example.com

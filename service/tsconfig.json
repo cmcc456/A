@@ -1,27 +1,29 @@
-{
-  "compilerOptions": {
-    "target": "es2020",
-    "lib": [
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "baseUrl": ".",
-    "outDir": "build",
-    "noEmit": true
-  },
-  "exclude": [
-    "node_modules",
-    "build"
-  ],
-  "include": [
-    "**/*.ts"
-  ]
+{  
+  "compilerOptions": {  
+    "target": "es2020",                  // 根据项目需求调整  
+    "lib": ["esnext"],  
+    "allowJs": true,                     // 如果需要编译 JavaScript 文件，保持 true  
+    "skipLibCheck": true,  
+    "strict": true,                      // 开启严格类型检查  
+    "forceConsistentCasingInFileNames": true,  
+    "esModuleInterop": true,  
+    "module": "esnext",  
+    "moduleResolution": "node",  
+    "resolveJsonModule": true,  
+    "isolatedModules": true,  
+    "baseUrl": ".",  
+    "paths": {                           // 如果使用路径别名，可以添加这里  
+      "@/*": ["src/*"]  
+    },  
+    "outDir": "build",  
+    "noEmit": false                      // 根据是否需要输出文件来调整  
+  },  
+  "exclude": [  
+    "node_modules",  
+    "build",  
+    "**/*.spec.ts"                       // 可以排除测试文件，如果它们不需要被编译  
+  ],  
+  "include": [  
+    "src/**/*.ts"                        // 明确指定源代码目录  
+  ]  
 }
